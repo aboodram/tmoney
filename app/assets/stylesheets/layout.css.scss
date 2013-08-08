@@ -1,0 +1,402 @@
+/************** MIXINS *******************/
+@mixin blur($strength) { 
+	-webkit-filter: blur($strength);
+    -moz-filter: blur($strength);
+    -o-filter: blur($strength);
+    -ms-filter: blur($strength);
+    filter: blur($strength);
+}
+@mixin blur-clear { 
+	-webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+}
+@mixin transition($time){
+  	-moz-transition:width $time;
+    -webkit-transition:width $time;
+    -o-transition:width $time;
+    transition:width $time;
+}
+
+@mixin border-gradient-top-bottom{
+	border-color: rgba(177, 177, 177, 0.22) rgba(114, 114, 114, 0.22) rgba(82, 82, 82, 0.22);
+}
+
+/************** Variables *******************/
+$blue1: #85B6DB; 							  //lighter
+$blue2: rgb(89, 147, 184);
+$blue3: rgb(40, 99, 145);
+$blue4: rgb(8, 1, 1); 					//darker
+
+$green1: #72DD94;
+$green2: #61CB78;
+$green3: #50CA7C;
+$green4: #32A453;
+
+$gray0: #F1F1F1;
+$gray1: #D6D6D6;
+$gray2: #919191;
+$gray3: #6F6F6F;
+$gray4: #5A5A5A;
+$gray5: #414141;
+$gray6: #2E2E2E;
+$gray7: #252525;
+
+$gray8: rgba(0, 0, 0, 0.8);
+
+$dynamicPointColor: rgb(255, 163, 0);
+/************** HTML TAGS *******************/
+html {
+	font-family: 'Lato', sans-serif;;
+	font-weight: 100;
+	background: url('/assets/bg-1.jpg') no-repeat center top fixed;
+	background-size: 100% auto;
+	//@include blur(10px);
+}
+ul.btn-container-vertical {
+	position: relative;
+	li {
+		display: block;
+	}
+}
+ul.align-top {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+	&:after {
+		position: absolute;
+		bottom: -2px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+		left: 0;
+		right: 0;
+		content: '';
+	}
+}
+ul.align-middle { 
+
+}
+ul.align-bottom { 
+
+}
+ul.no-border {
+	border: none;
+}
+
+li.btn {
+	display: inline-block;
+	padding: 15px 40px;
+}
+a,
+a:visited {
+	color: white;
+	text-decoration: none;
+	text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.73);
+}
+a:hover {
+
+}
+input {
+	border: none;
+	background-color: transparent;
+	font-size: 14px;
+}
+
+/******************** TOOLS-CONTAINERS *******************/
+.window-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.popup-window {
+	position: relative;
+	display: block;
+	background: $gray6;
+	box-shadow: 4px 4px 0px rgba(0, 214, 255, 0.93);
+	&:after {
+
+	}
+}
+.popup-window {
+
+}
+/************** TOOLS-COMPONENTS *******************/
+
+.data-point-container {
+	position: relative;
+	width: 0;
+	height: 0;
+	margin: 0 auto;
+}
+.dynamic-point,
+.dynamic-point:before,
+.dynamic-point:after {
+	height: 10px;
+	width: 10px;
+	content: '';
+	border-radius: 7px;
+	position: absolute;
+	background-color: $dynamicPointColor;
+	&.custom-alignment {
+
+	}
+	&:before {
+		background-color: yellow;
+	}
+	&:after {
+		background-color: green;
+	}
+	&:hover {
+		background-color: rgb(255, 174, 31);
+		transition: 0.2s;
+		&:before {
+			left: -3px;
+			background-color: pink;
+			@include transition(0.1s);
+		}
+		&:after {
+			left: 3px;
+			background-color: lightblue;
+			@include transition(0.1s);
+		}
+	}
+}
+
+.img-circle {
+	width: 100px;
+	height: 100px;
+	border-radius: 60px;
+	overflow: hidden;
+	border: 2px solid rgb(68, 68, 68);
+	position: absolute;
+	img {
+		width: 149%;
+		margin-left: -33px;
+		@include transition(1s);
+		&:hover {
+			@include transition(1s);
+			width: 165%;
+		}
+	}
+}
+.img-circle-sml {
+	@extend .img-circle;
+	width: 30px;
+	height: 30px;
+}
+.info-row {
+	display: block;
+	padding: 0 10px;
+	margin: 0 15px;
+	line-height: 2.2em;
+	font-size: 14px;
+	border-bottom: 1px $gray3 dotted;
+	color: $blue2;
+	@include transition(0.4s);
+	transition-property: color;
+	&:hover {
+		@include transition(0.4s);
+		transition-property: color;
+		cursor: pointer;
+		color: $blue1;
+	}
+	span {
+		color: $gray2;
+		text-transform: uppercase;
+		width: 37%;
+		display: inline-block;
+		&:hover {
+			cursor: default;
+		}
+	}
+
+}
+.split-half {
+	width: 50%;
+	box-sizing: border-box;
+	display: inline-block;
+	&:first-child {
+		border-right: 1px solid $gray3;
+		width: 50.1%;
+	}
+	&:nth-child(2n+1) {
+
+	}
+	&.button {
+		@include transition(0.3s);
+		transition-property: top, left, box-shadow, background-color;
+		position: absolute;
+		top: 0;
+		left: 175px;
+		&:first-child {
+			left: 0;
+			&:hover {
+				@include transition(0.3s);
+				transition-property: top, left, background-color;
+				left: -4px;
+			}
+			&:active{
+				@include transition(0.3s);
+				transition-property: top, left,background-color;
+				left: 0;
+			}
+		}
+		&:hover {
+			@include transition(0.3s);
+			transition-property: top, left,background-color;
+			top: -4px;
+			left: 171px;
+		}
+		&:active {
+			@include transition(0.3s);
+			transition-property: top, left, box-shadow,background-color;
+			top: 0;
+			left: 175px;
+			box-shadow: none;
+		}
+	}
+}
+
+.button {
+	line-height: 4em;
+	height: 55px;
+	text-align: center;
+	font-size: 14px;
+	color: white;
+	text-transform: uppercase;
+	&:hover {
+		cursor: pointer;
+		background: $gray5;
+		box-shadow: 4px 4px $gray7;
+	}
+}
+.dresser {
+	position: absolute;
+	bottom: 0;
+}
+.drawer {
+	position: relative;
+	border-top: 1px solid $gray2;
+	overflow: hidden;
+	@include transition(0.5s);
+	transition-property: height, color;
+	background: $gray6;
+	height: 44px;
+	&:hover {
+		cursor: pointer;
+	}
+	&.open {
+		@include transition(0.5s);
+		transition-property: height;
+		overflow-y: auto;
+		height: 134px;
+		background: $gray6;
+		p {
+			@include transition(2s);
+			transition-property: color;
+			color: $gray3;
+		}
+	}	
+	h1 {
+		display: inline-block;
+		font-size: 1.2em;
+		line-height: 2.5em;
+		padding-left: 75px;
+		color: white;
+		width: 100px;
+		&:hover + span {
+			@include transition(0.5s);
+			transition-property: color;
+			color:  $blue1;
+		}
+	}
+	span {
+		margin-left: 75px;
+		color:  $blue2;
+		font-size: 14px;
+		@include transition(0.5s);
+		transition-property: color;		
+		&:before {
+			position: absolute;
+			left: -5px;
+		}
+		&:hover {
+			@include transition(0.5s);
+			transition-property: color;
+			color:  $blue1;
+		}
+	}
+	p {
+		@include transition(1.5s);
+		transition-property: color;
+		font-size: 14px;
+		color: $gray7;
+		line-height: 1.2em;
+		padding: 0 30px;
+	}
+	.img-circle-sml {
+		margin-top: 5px;
+		margin-left: 15px;
+	}
+}
+/******************** SPECIFICS *******************/
+.main-nav-container {
+	margin: 0 auto;
+	max-width: 55%;
+	text-align: center;
+	ul, ul:after {
+		border: none;
+	}
+}
+.bio {
+	position: absolute;
+	width: 350px;
+	height: 400px;
+	top: 700px;
+	left: 100px;
+	.img-circle {
+		top: 100px;
+		left: 16px;
+	}
+	.bio-header {
+		height: 130px;
+	}
+	.bio-body {
+		border-bottom: 1px solid $gray2;
+	}
+	.bio-body-title {
+		min-height: 74px;
+		padding: 5px 20px 10px 137px;
+		color: $blue1;
+		font-size: 11px;
+		line-height: 1.3em;
+		border-bottom: 1px solid $gray2;
+		span {
+			display: block;
+			font-size: 22px;
+			line-height: 1.5em;
+			color: white;
+		}
+	}
+	.bio-footer {
+		position: relative;
+	}
+}
+.specialty {
+	position: absolute;
+	width: 350px;
+	height: 400px;
+	top: 700px;
+	left: 455px;
+	.specialty-header {
+		position: absolute;
+	}
+}
+/******************** OVERWRITES *******************/
+.no-border {
+	border: none;
+}
+
+
+

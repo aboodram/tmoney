@@ -13,12 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 
-//= require Underscore
-//= require Raphael
-//= require Require
-//= require Backbone
+//= require underscore
+//= require backbone
 //= require d3.v3
-//= require colorwheel
-//= require colorpicker
+
+//= require_tree
