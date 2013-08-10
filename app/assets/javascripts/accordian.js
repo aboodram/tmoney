@@ -7,10 +7,19 @@
 (function(){
 	console.log('accordian.js');
 
-	accordianList = function() {
+	accordianList = function(options) {
 	var accordianList,
 			dresser,
 			drawer,
+			options = {
+				speed: 1, //1-4 or milliseconds
+				onHover: '',
+				onClick: '',
+				classActive: 'active',
+				classHover: 'hover',
+				classClosed: 'closed',
+				classOpen: 'open'
+			},
 			defaultDrawerClassName = 'drawer';
 
 	var // functions ->
@@ -31,9 +40,10 @@
 			// 	console.log(this);
 			// },
 			onDrawerClick = function (){
+				// close all the drawers in the dresser
 				var drawers = this.parentElement.children,
 						regEx;
-						//= new RegExp('',);
+						//= new RegExp('');
 				regEx = /\bopen\b/;
 				
 				if ( regEx.test(this.className) ) {

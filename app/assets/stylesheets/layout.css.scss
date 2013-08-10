@@ -249,7 +249,7 @@ input {
 			left: 171px;
 		}
 		&:active {
-			@include transition(0.3s);
+			@include transition(0.1s);
 			transition-property: top, left, box-shadow,background-color;
 			top: 0;
 			left: 175px;
@@ -301,7 +301,7 @@ input {
 	h1 {
 		display: inline-block;
 		font-size: 1.2em;
-		line-height: 2.5em;
+		line-height: 2.2em;
 		padding-left: 75px;
 		color: white;
 		width: 100px;
@@ -312,7 +312,7 @@ input {
 		}
 	}
 	span {
-		margin-left: 75px;
+		margin-left: 80px;
 		color:  $blue2;
 		font-size: 14px;
 		@include transition(0.5s);
@@ -335,15 +335,17 @@ input {
 		line-height: 1.2em;
 		padding: 0 30px;
 	}
-	.img-circle-sml {
-		margin-top: 5px;
-		margin-left: 15px;
+	img {
+		margin-top: 6px;
+		margin-left: 20px;
+		width: 31px;
+		position: absolute;
 	}
 }
 /******************** SPECIFICS *******************/
 .main-nav-container {
 	margin: 0 auto;
-	max-width: 55%;
+	max-width: 70%;
 	text-align: center;
 	ul, ul:after {
 		border: none;
@@ -356,7 +358,7 @@ input {
 	top: 700px;
 	left: 100px;
 	.img-circle {
-		top: 100px;
+		top: 106px;
 		left: 16px;
 	}
 	.bio-header {
@@ -372,6 +374,7 @@ input {
 		font-size: 11px;
 		line-height: 1.3em;
 		border-bottom: 1px solid $gray2;
+		border-top: 1px solid $gray2;
 		span {
 			display: block;
 			font-size: 22px;
@@ -383,12 +386,24 @@ input {
 		position: relative;
 	}
 }
-.specialty {
+.sub-window {
 	position: absolute;
 	width: 350px;
 	height: 400px;
 	top: 700px;
-	left: 455px;
+	left: 100px;
+	@include transition(0.5s);
+	transition-timing-function: ease-out;
+	transition-property: left;
+	&.open {
+		@include transition(0.5s);
+		transition-timing-function: ease-out;
+		transition-property: left;
+		left: 475px;
+	}
+	.open.extended-width {
+		width: 550px;
+	}
 	.specialty-header {
 		position: absolute;
 	}
