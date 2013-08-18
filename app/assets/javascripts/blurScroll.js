@@ -20,7 +20,6 @@
 
 
 	};
-	window.onscroll = function(){console.log('window scroll')};
 	if (document.body) {
 		blurScrollSetup();
 	} else {

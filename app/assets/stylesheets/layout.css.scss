@@ -162,9 +162,17 @@ span {
 	}
 }
 .destination-info {
-	color: white;
+	color: $blue2;
 	display: block;
 	line-height: 1.7em;
+	@include transition(0.4s);
+	transition-property: color;
+	&:hover {
+		@include transition(0.4s);
+		transition-property: color;
+		cursor: pointer;
+		color: $blue1;
+	}
 }
 
 /************** TOOLS-COMPONENTS *******************/
