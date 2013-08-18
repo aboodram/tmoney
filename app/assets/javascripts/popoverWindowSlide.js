@@ -4,7 +4,7 @@
 	var popoverButton,
 			subWindows,
 	    subWindows = document.getElementsByClassName('sub-window'),
-			openClass  = 'open';
+			openClass  = 'open',
 
 	// functions ->
 	  popoverSetupListeners = function () {

@@ -46,7 +46,7 @@ $gray7: #252525;
 
 $gray8: rgba(0, 0, 0, 0.8);
 
-$dynamicPointColor: rgb(255, 163, 0);
+$dynamicPointColor: $blue2;
 /************** HTML TAGS *******************/
 html {
 	font-family: 'Lato', sans-serif;;
@@ -100,7 +100,23 @@ input {
 	background-color: transparent;
 	font-size: 14px;
 }
-
+span {
+	&.title {
+		display: block;
+		font-size: 22px;
+		line-height: 1.5em;
+		color: white;
+	}
+	&.quote {
+		display: block;
+		line-height: 1.3em;
+		padding: 5px 20px;
+		font-size: 14px;
+		color: white;
+		background-color: $gray6 ;
+		box-shadow: 3px 3px 1px $gray8;
+	}
+}
 /******************** TOOLS-CONTAINERS *******************/
 .window-container {
 	position: absolute;
@@ -114,6 +130,7 @@ input {
 	display: block;
 	background: $gray6;
 	box-shadow: 4px 4px 0px rgba(0, 214, 255, 0.93);
+	overflow: hidden;
 	&:after {
 
 	}
@@ -121,6 +138,35 @@ input {
 .popup-window {
 
 }
+.map-point-hover-container {
+	position: absolute;
+	padding: 0 10px 10px 10px;
+	box-sizing: border-box;
+	border: 1px $gray5 solid;
+	background-color: rgba(0, 0, 0, 0.4);
+	text-transform: uppercase;
+	text-align: center;
+	z-index: 1;
+	&:hover {
+		cursor: pointer;
+	}
+	&:after {
+		//css triangle
+	}
+	&:before {
+		//css triangle
+	}
+	img {
+		width: 100%;
+		height: 63px;
+	}
+}
+.destination-info {
+	color: white;
+	display: block;
+	line-height: 1.7em;
+}
+
 /************** TOOLS-COMPONENTS *******************/
 
 .data-point-container {
@@ -132,33 +178,36 @@ input {
 .dynamic-point,
 .dynamic-point:before,
 .dynamic-point:after {
-	height: 10px;
-	width: 10px;
+	height: 8px;
+	width: 8px;
+	border-radius: 8px;
 	content: '';
-	border-radius: 7px;
 	position: absolute;
 	background-color: $dynamicPointColor;
 	&.custom-alignment {
 
 	}
 	&:before {
-		background-color: yellow;
+		background-color: $blue2;
 	}
 	&:after {
-		background-color: green;
+		background-color: $blue2;
 	}
 	&:hover {
 		background-color: rgb(255, 174, 31);
-		transition: 0.2s;
+		@include transition(0.2s);
+		transition-property: left;	
 		&:before {
 			left: -3px;
-			background-color: pink;
-			@include transition(0.1s);
+			background-color: $blue1;
+			@include transition(0.2s);
+			transition-property: left;	
 		}
 		&:after {
 			left: 3px;
-			background-color: lightblue;
-			@include transition(0.1s);
+			background-color: $blue1;
+			@include transition(0.2s);
+			transition-property: left;	
 		}
 	}
 }
@@ -170,6 +219,7 @@ input {
 	overflow: hidden;
 	border: 2px solid rgb(68, 68, 68);
 	position: absolute;
+	//-webkit-filter: grayscale(1); optional gray filter....?
 	img {
 		width: 149%;
 		margin-left: -33px;
@@ -297,13 +347,19 @@ input {
 			transition-property: color;
 			color: $gray3;
 		}
+	}
+	&.extended-height {
+		min-height: 135px;
+		p {
+			color: $gray3;
+		}
 	}	
 	h1 {
 		display: inline-block;
 		font-size: 1.2em;
 		line-height: 2.2em;
-		padding-left: 75px;
 		color: white;
+		padding-left: 75px;
 		width: 100px;
 		&:hover + span {
 			@include transition(0.5s);
@@ -327,6 +383,13 @@ input {
 			color:  $blue1;
 		}
 	}
+	img {
+		margin-top: 6px;
+		margin-left: 20px;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+	}
 	p {
 		@include transition(1.5s);
 		transition-property: color;
@@ -335,12 +398,12 @@ input {
 		line-height: 1.2em;
 		padding: 0 30px;
 	}
-	img {
-		margin-top: 6px;
-		margin-left: 20px;
-		width: 31px;
-		position: absolute;
-	}
+}
+.grayscale {
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
 }
 /******************** SPECIFICS *******************/
 .main-nav-container {
@@ -351,18 +414,19 @@ input {
 		border: none;
 	}
 }
+.popup-header {
+	height: 130px;
+}
 .bio {
 	position: absolute;
 	width: 350px;
 	height: 400px;
 	top: 700px;
 	left: 100px;
+	overflow: visible;
 	.img-circle {
 		top: 106px;
 		left: 16px;
-	}
-	.bio-header {
-		height: 130px;
 	}
 	.bio-body {
 		border-bottom: 1px solid $gray2;
@@ -375,12 +439,6 @@ input {
 		line-height: 1.3em;
 		border-bottom: 1px solid $gray2;
 		border-top: 1px solid $gray2;
-		span {
-			display: block;
-			font-size: 22px;
-			line-height: 1.5em;
-			color: white;
-		}
 	}
 	.bio-footer {
 		position: relative;
@@ -393,20 +451,135 @@ input {
 	top: 700px;
 	left: 100px;
 	@include transition(0.5s);
-	transition-timing-function: ease-out;
 	transition-property: left;
+	transition-timing-function: ease-out;
 	&.open {
 		@include transition(0.5s);
-		transition-timing-function: ease-out;
 		transition-property: left;
+		transition-timing-function: ease-out;
 		left: 475px;
 	}
-	.open.extended-width {
-		width: 550px;
+	&.open.extended-width {
+		width: 640px;
 	}
 	.specialty-header {
 		position: absolute;
 	}
+}
+.sub-window.college {
+	background: url('green-plant-1.jpg');
+	overflow: auto;
+	&.open {
+		img {
+		-webkit-filter: blur(3px);
+			 -moz-filter: blur(3px);
+				 -o-filter: blur(3px);
+				-ms-filter: blur(3px);
+						filter: blur(3px);	
+		}
+	}
+	img {
+		margin-top: -220px;
+	}
+	.specialty-header {
+		margin-top: 220px;
+		overflow: hidden;
+	}
+	span {
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	p {
+		padding: 7px 35px;
+		line-height: 1.3em;
+		font-size: 0.8em;
+		color: white;
+	}
+}
+.sub-window.location {
+	background: url('world-map.jpg');
+	&.open {
+		.floating-banner {
+			margin-left: -2400px;
+		}
+	}
+	.floating-banner {
+		@include transition(30.3s);
+		transition-timing-function: linear;
+		transition-property: margin-left;
+		margin-top: 345px;
+		padding-left: 685px;
+		color: $gray2;
+		white-space: nowrap;
+		font-size: 1.1em;
+		line-height: 2em;
+		display: block;
+		border-bottom: 1px dotted $gray3;
+		border-top: 1px dotted $gray3;
+		background-color: rgba(0, 0, 0, 0.25);
+	}
+}
+.world-align-1 { //Utah
+	top: 166px;
+	left: 94px;
+}
+.world-align-2 { //England
+	top: 136px;
+	left: 287px;
+}
+.world-align-3 { //Argentina
+	top: 310px;
+	left: 185px;
+}
+.world-align-4 { // Iceland
+	top: 105px;
+	left: 260px;
+}
+.world-align-5 { // Fiji
+	top: 272px;
+	left: 609px;
+}
+.world-align-6 { // Thailand
+	top: 214px;
+	left: 471px;
+}
+.world-align-7 { // Nepal
+	top: 190px;
+	left: 447px;
+}
+.world-align-8 { // Ecuador
+	top: 242px;
+	left: 153px;
+}
+.world-align-9 { // Hawai'i
+	top: 203px;
+	left: 17px;
+}
+.world-align-10 { // Baja Mexico
+	top: 192px;
+	left: 94px;
+}
+.world-align-11 { // Peru
+	top: 263px;
+	left: 162px;
+}
+.world-align-12 { // New England
+	top: 172px;
+	left: 159px;
+}
+.world-align-13 { // Chile
+	top: 320px;
+	left: 163px;
+}
+.no-blur-background {
+	padding-top: 5px;
+	margin-top: 220px;
+	background-color: rgba(0, 0, 0, 0.15);
+	-webkit-filter: blur(0px);
+		 -moz-filter: blur(0px);
+			 -o-filter: blur(0px);
+			-ms-filter: blur(0px);
+					filter: blur(0px);
 }
 /******************** OVERWRITES *******************/
 .no-border {
