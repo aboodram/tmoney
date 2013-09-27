@@ -1,4 +1,4 @@
-(function() {
+window.addEventListener('DOMContentLoaded', function() {
 	console.log('popoverWindowAccordian.js');
 
 	var popoverButton,
@@ -7,7 +7,7 @@
 			openClass  = 'open',
 
 	// functions ->
-	  popoverSetupListeners = function () {
+	  setupPopoverListeners = function () {
 	  	//find the right elements
 	  	popoverButton = document.getElementsByClassName('bio')[0].getElementsByClassName('popoverButton');
 
@@ -96,10 +96,5 @@
 
 	  };
 
-
-	if (document.body) {
-		popoverSetupListeners();
-	} else {
-		window.setTimeout(popoverSetupListeners, 1000);
-	}
-})();
+		setupPopoverListeners();
+});

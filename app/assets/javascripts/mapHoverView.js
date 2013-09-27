@@ -1,4 +1,4 @@
-(function() {
+window.addEventListener('DOMContentLoaded', function() {
 	console.log('mapHoverView.js');
 
 	var mapHoverView = function () {
@@ -16,23 +16,37 @@
 
 		},
 
-		setupListeners = function (className, parentClass, event) {
+		setupListeners = function (className, parentClass, event, callback) {
 			listenees = document.getElementsByClassName(parentClass)[0].getElementsByClassName(className);
 
 	  	for (var i = 0; i < listenees.length; i++) {
-        listenees[i].addEventListener(event, onEventTrigger);
+        listenees[i].addEventListener(event, callback);
 	  	}
 
 		},
 
+		removeListeners = function (className, parentClass, event, callback) {
+			listenees = document.getElementsByClassName(parentClass)[0].getElementsByClassName(className);
+
+	  	for (var i = 0; i < listenees.length; i++) {
+        listenees[i].removeEventListener(event, callback);
+	  	}
+
+		},
 		onEventTrigger = function () {
 			var that = this
 			if (this.children[0]) return;
-			clearMapHoverView();
+			clearMapHoverView.apply(this);
 			showMapHoverView(that);
+			setupListeners('map-point-hover-container', that.className, 'click', onHoverContainerClick);
+		},
+
+		onHoverContainerClick = function () {
+			clearMapHoverView.apply(this);
 		},
 
 		clearMapHoverView = function () {
+			removeListeners('map-point-hover-container', this.className, 'click', onHoverContainerClick);
 			var mapHoverViews = document.getElementsByClassName('map-point-hover-container');
 	  	
 	  	for (var i = 0; i < mapHoverViews.length; i++) {
@@ -113,7 +127,7 @@
 
 		getLocationImageFromId = function(id) {
 			var img,
-					url = 'assets/' + id + '-sml.jpeg';
+					url = 'assets/' + id + '-sml.jpg';
 					imgExists = function() {
 						try {
 							var r = new XMLHttpRequest ();
@@ -130,7 +144,7 @@
 
 			if (!imgExists) id = 'default';
 			
-			img.setAttribute('src', 'assets/' + id + '-sml.jpeg');
+			img.setAttribute('src', 'assets/' + id + '-sml.jpg');
 			
 			return img;
 		},
@@ -150,13 +164,9 @@
 			return el.getAttribute('id');
 		}
 
-		setupListeners('dynamic-point', 'location', 'mouseover');
-		setupListeners('dynamic-point', 'location', 'mouseout');
+		setupListeners('dynamic-point', 'location', 'mouseover', onEventTrigger);
+		setupListeners('dynamic-point', 'location', 'mouseout', onEventTrigger);
 	};
-
-	if (document.body) {
-		mapHoverView();
-	} else {
-		window.setTimeout(mapHoverView, 1000);
-	}
-})();
+		
+	mapHoverView();
+});

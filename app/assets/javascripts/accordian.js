@@ -4,7 +4,7 @@
 	TaylorAllred.Com
 */
 
-(function(){
+window.addEventListener('DOMContentLoaded', function(){
 	console.log('accordian.js');
 
 	accordianList = function(options) {
@@ -55,18 +55,11 @@
 				};
 				this.className += " open";
 			};
+		// Find my dresser. Dresser is the container ul for the li.drawer
+		dresser =  document.getElementsByClassName('dresser');
 
-	// Find my dresser. Dresser is the container ul for the li.drawer
-	dresser =  document.getElementsByClassName('dresser');
-
-	findDressers(dresser);
-
-
+		findDressers(dresser);
 	}
 
-	if (document.body) {
-		accordianList();
-	} else {
-		window.setTimeout(accordianList, 1000);
-	}
-})();
+	accordianList();
+});

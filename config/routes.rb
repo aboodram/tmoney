@@ -1,5 +1,11 @@
 Tmoney::Application.routes.draw do
   get "home/index"
+  get "js/home", to: 'home#index'
+  get "js/company_vivint"
+  get "js/company_moneydesktop"
+  get "js/company_orangesoda"
+  get "js/company_bluemarketing"
+  get "js/company_universityofutah"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
