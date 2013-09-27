@@ -1,6 +1,5 @@
 Tmoney::Application.routes.draw do
   get "home/index"
-  get "js/home", to: 'home#index'
   get "js/company_vivint"
   get "js/company_moneydesktop"
   get "js/company_orangesoda"

@@ -1,7 +1,7 @@
- $(function(){
- 	require([], function(){
+//  $(function(){
+//  	require([], function(){
 
-				//console.log('Initialize.js');
+// 				//console.log('Initialize.js');
 
-	})
-});
+// 	})
+// });

@@ -225,8 +225,6 @@ window.addEventListener('DOMContentLoaded', function () {
 				rXML	= request.responseXML;
 				document.getElementById('company-display-container').innerHTML = rText;
 				showCompany(company);
-			} else {
-				
 			}
 		};
 
@@ -240,41 +238,3 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	timelineSlider();
 });
-
-window.dateObjects = {
-	0: {
-		year: 2050,
-		text: '',
-		isCompany: false,
-	},
-	1: {
-
-	},
-	2: {
-
-	},
-	3: {
-
-	},
-	0: {
-
-	},
-	0: {
-
-	},
-	0: {
-
-	},
-	0: {
-
-	},	
-	0: {
-
-	},
-	0: {
-
-	},
-	0: {
-
-	},
-}

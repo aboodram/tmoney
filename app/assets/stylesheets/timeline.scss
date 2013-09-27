@@ -140,7 +140,6 @@ $timeline-ruler-content-width: 5491px;
 	}
 }
 .company-container {
-	display: none;
 	background-color: $gray6;
 	margin: 0 auto;
 	box-shadow: 1px 2px 16px rgb(10, 10, 10);
@@ -159,6 +158,7 @@ $timeline-ruler-content-width: 5491px;
 	}
 	.header {
 		border-bottom: 1px solid $gray5;
+		min-height: 100px;
 	}
 	.body {
 		border-top: 1px solid $gray6;
