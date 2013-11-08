@@ -136,7 +136,7 @@ $timeline-ruler-content-width: 5491px;
 		margin-left: 48px;
 	}
 	.universityofutah {
-		margin-left: 108px;
+		margin-left: 108px;//
 	}
 }
 .company-container {
@@ -149,7 +149,7 @@ $timeline-ruler-content-width: 5491px;
 	vertical-align: top;
 	text-align: center;
 	img {
-		margin: 10px 0px;
+		margin: 10px 0 0;
 		max-height: 75px;
 		@include user-selecT(none);
 	}
@@ -157,21 +157,31 @@ $timeline-ruler-content-width: 5491px;
 		display: block;
 	}
 	.header {
-		border-bottom: 1px solid $gray5;
-		min-height: 100px;
+		border-bottom: 1px solid $gray2;
+		min-height: 80px;
 	}
 	.body {
+		height: 375px;
+		margin-top: 10px;
+		line-height: 1.2em;
+		color: $gray2;
+		font-size: 14px;
 		border-top: 1px solid $gray6;
 		position: relative;
-		color: $gray2;
+		overflow: hidden;
 		h1 {
-			text-transform: uppercase;
-			&:before,
-			&:after {
+			display: block;
+			font-size: 20px;
+			line-height: 1.5em;
+			color: white;
+			text-align: left;
+			text-indent: 20px;
+			&:after,
+			&:before {
 				width: 10px;
 				height: 10px;
 				background-color: white;
-				content: '';
+				//content: '';
 				position: absolute;
 				top: 20px;
 				&:hover {
@@ -184,6 +194,26 @@ $timeline-ruler-content-width: 5491px;
 			&:after {
 				right: 20px;
 			}
+		}
+		li {
+			font-size: 1.1em;
+			color: $blue2;
+			@include transition(0.4s);
+			transition-property: color;			
+			&:hover {
+				color: $blue1;
+				@include transition(0.4s);
+				transition-property: color;
+			}
+		}
+		p {
+
+			padding: 0 30px;
+			margin-bottom: 10px;
+			text-align: left;
+		}
+		span {
+			color: $blue1;
 		}
 	}
 }

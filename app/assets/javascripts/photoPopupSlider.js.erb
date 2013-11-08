@@ -1,0 +1,51 @@
+window.addEventListener('DOMContentLoaded', function () {
+	var photoPopupSlider = function () {
+		var photoDiv = document.getElementById('photo-popup-div'),
+				imageList = window.popupPhotos,
+
+		// Functions -->
+		setup = function () {
+			setupListeners();
+			getImageList();
+		},
+
+		setupListeners = function () {
+
+		},
+
+		setImageTags = function () {
+			for (var i = 0; i > imageList.length; i++) {
+				photoDiv.innerHTML = '<img src="'+ imageList[i] + '" alt="Popup Photos" />'; 
+			}
+		},
+
+		createAjaxRequestObject = function () {
+			var ajax;
+			
+			if (window.XMLHttpRequest) {
+			 ajax = new XMLHttpRequest;	
+			} else if (window.ActiveXObject) {
+				try {
+					ajax = new ActiveXObject("Msxml2.XMLHTTP");
+				} catch (e) {
+					try {
+						request = new ActiveXObject("Microsoft.XMLHTTP");
+					} catch (e) {
+						console.log('AJAX Error: ', e.description);
+					}
+				}
+			};
+
+			ajax.onreadystatechange = function () {
+				if (ajax.readyState == 4 && request.state == 200) {
+					rText = ajax.responseText;
+					rXML  = ajax.responseXML;
+					console.log('rText', 'rXML');
+				}
+			};
+		};
+
+		setup();
+	};
+	photoPopupSlider();
+});

@@ -4,7 +4,7 @@ html {
 	font-weight: 100;
 	background-color: $gray5;
 	background-image: url('bg-texture.png');
-	background-repeat: repeat-x repeat-y;
+	background-repeat: repeat;
 
 }
 ul.btn-container-vertical {
@@ -556,10 +556,36 @@ span {
 	}
 }
 .project-gallery-container {
-	background: rgba(0, 0, 0, 0.18);;
+	position: relative;
+	background: rgba(0, 0, 0, 0.18);
 	height: 800px;
 	width: 100%;
 	margin: 100px auto 0;
+					transform: translate(0, 0);
+			-ms-transform: translate(0, 0);
+	-webkit-transform: translate(0, 0);
+	@include transition(0.4s); 
+	.img-wrapper {
+		max-width: 250px;
+		border: 3px solid $gray7;
+		overflow: hidden;
+		position: absolute;
+		&:hover {
+			width: 250px;					
+			img {
+				margin-left: -10px;
+				width: 100%;
+				@include transition(0.4s);
+				transition-property: margin-left, width;
+				cursor: pointer;
+			}
+		}
+		img {
+			width: 250px;	
+			@include transition(0.4s);
+			transition-property: margin-left, width;		
+		}
+	}
 }
 
 .pre-text,
@@ -606,7 +632,7 @@ span {
 	}
 	span {
 		color: white;
-		@include transform-origin(0, 80px);
+		@include transform-origin(0px, 80px);
 		position: absolute;
 		top: -25px;
 		left: 50px;
@@ -622,6 +648,57 @@ $root-deg: $total-angle/$num-letters;
 	.l#{$i} {
 		@include rotate(($i * $root-deg - 93 - $root-deg/2)+deg);
 		@include user-selecT(none);
+	}
+}
+.scrim {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 1;
+	.close-button {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		font-size: 42px;
+		color: $gray1;
+		padding: 5px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+.photobox {
+	display: block;
+	margin-top: 300px;
+	padding: 100px;
+	@include user-selecT(none);	
+	img {
+		max-height: 550px;
+		max-width: 90%;
+		display: block;
+		margin: auto;
+		@include user-selecT(none);
+	}
+	.next,
+	.prev {
+		padding: 5px 10px;
+		background-color: $gray7;
+		color: $gray1;
+		position: absolute;
+		top: 50%;
+		left: 5%;
+		@include user-selecT(none);		
+		&:hover {
+			cursor: pointer;
+			color: $blue1;
+		}
+	}
+	.next {
+		left: auto;
+		right: 5%;
 	}
 }
 /******************** OVERWRITES *******************/

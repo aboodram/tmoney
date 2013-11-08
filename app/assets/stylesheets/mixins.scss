@@ -1,25 +1,25 @@
 
 @mixin blur($strength) { 
 	-webkit-filter: blur($strength);
-    -moz-filter: blur($strength);
-    -o-filter: blur($strength);
-    -ms-filter: blur($strength);
-    filter: blur($strength);
+     -moz-filter: blur($strength);
+      -ms-filter: blur($strength);
+       -o-filter: blur($strength);
+          filter: blur($strength);
 }
 
 @mixin blur-clear { 
 	-webkit-filter: blur(0px);
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter: blur(0px);
-    filter: blur(0px);
+     -moz-filter: blur(0px);
+      -ms-filter: blur(0px);
+       -o-filter: blur(0px);
+          filter: blur(0px);
 }
 
 @mixin transition($time) {
-  	-moz-transition:width $time;
-    -webkit-transition:width $time;
-    -o-transition:width $time;
-    transition:width $time;
+  -webkit-transition: width $time;
+		 -moz-transition: width $time;
+ 			 -o-transition: width $time;
+  				transition: width $time;
 }
 
 @mixin border-gradient-top-bottom {
@@ -28,48 +28,47 @@
 
 @mixin rotate($deg) {
 	-webkit-transform: rotate($deg);
-	-moz-transform: rotate($deg);
-	-ms-transform: rotate($deg);
-	-o-transform: rotate($deg);
-	transform: rotate($deg);
+	   -moz-transform: rotate($deg);
+	    -ms-transform: rotate($deg);
+	     -o-transform: rotate($deg);
+	        transform: rotate($deg);
 }
 
 @mixin coverAll {
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+		   top: 0;
+		 right: 0;
+		bottom: 0;
+		  left: 0;
 }
 
 @mixin transform-origin($x, $y) {
-	transform-origin: $x $y;
-	-ms-transform-origin: $x $y; /* IE 9 */
+	        transform-origin: $x $y;
+	    -ms-transform-origin: $x $y; /* IE 9 */
 	-webkit-transform-origin: $x $y; /* Safari and Chrome */
 }
 
 @mixin transform-rotate ($degree) {
-	transform:rotate($degree);
-	-ms-transform:rotate($degree); /* IE 9 */
-	-webkit-transform:rotate($degree); /* Safari and Chrome */
+	        transform: rotate($degree);
+	    -ms-transform: rotate($degree); /* IE 9 */
+	-webkit-transform: rotate($degree); /* Safari and Chrome */
 }
 
 @mixin user-selecT ($value) {
-	-webkit-touch-callout: $value;
 	-webkit-user-select: $value;
-	-khtml-user-select: $value;
-	-moz-user-select: $value;
-	-ms-user-select: $value;
-	user-select: $value;
+	 -khtml-user-select: $value;
+	   -moz-user-select: $value;
+	    -ms-user-select: $value;
+	        user-select: $value;
 }
 
 @mixin flipY {
-  -moz-transform: scaleY(-1);
-  -o-transform: scaleY(-1);
   -webkit-transform: scaleY(-1);
-  transform: scaleY(-1);
-  filter: FlipV;
-  -ms-filter: "FlipV";
+     -moz-transform: scaleY(-1);
+       -o-transform: scaleY(-1);
+         -ms-filter: "FlipV";
+          transform: scaleY(-1);
+             filter: FlipV;
 }
 
 @mixin upArrow($size, $color) {

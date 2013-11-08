@@ -1,5 +1,7 @@
 <% content_for :header do %>
-  
+  <%= javascript_tag do %>
+		window.popupPhotos = <%=raw @popupPhotos %>;
+	<% end %>
 <% end %>
 
 <div class="window-background">
@@ -33,7 +35,7 @@
 				<div id="peru" class="dynamic-point world-align-11"></div> 				<!-- // Peru 				-->										
 				<div id="new england" class="dynamic-point world-align-12"></div> <!-- // New England -->	
 				<div id="chile" class="dynamic-point world-align-13"></div> 			<!-- // Chile 			-->
-				<p class="floating-banner">All the dots on this map represent places I've lived or traveled. All the photos on this site were taken by me*. One of my long term goals is to take my laptop with me, work online and travel the world with the love of my life.</p>
+				<p class="floating-banner">All the dots on this map represent places I've lived or traveled. All the photos on this site were taken by me (except the ones of me). One of my goals is to work online and travel the world with the love of my life.</p>
 			</div>
 			<div class="popup-window sub-window specialty">
 				<section>
@@ -252,9 +254,9 @@
 		<div id="company-display-container" class="body">
 		</div>
 	</div>
-	<div class="project-gallery-container station-container">
+	<div id="project-gallery-container" class="project-gallery-container station-container">
 		<div id="project-gallery" class="title"><h1>Accomplishments</h1></div>
-		<div class="body"> </div>
+		<div id="photo-popup-div" class="body"></div>
 		<div class="footer-container"></div>
 	</div>
 	<div class="extras-container station-container">
