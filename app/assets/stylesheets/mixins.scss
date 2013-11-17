@@ -106,3 +106,24 @@
 	border-bottom: $size solid transparent;
 	border-left: 0 solid transparent;
 }
+
+@mixin grayscale() {
+					filter: grayscale(100%); /* Current draft standard */
+  -webkit-filter: grayscale(100%); /* New WebKit */
+		 -moz-filter: grayscale(100%);
+		  -ms-filter: grayscale(100%); 
+			 -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */ 
+				  filter: url(resources.svg#desaturate); /* Gecko */
+				  filter: gray; /* IE */
+  -webkit-filter: grayscale(1); /* Old WebKit */
+}
+@mixin nograyscale() {
+					filter: grayscale(0); /* Current draft standard */
+  -webkit-filter: grayscale(0); /* New WebKit */
+		 -moz-filter: grayscale(0);
+		  -ms-filter: grayscale(0); 
+			 -o-filter: grayscale(0); /* Not yet supported in Gecko, Opera or IE */ 
+				  filter: url(resources.svg#desaturate); /* Gecko */
+				  filter: none; /* IE */
+  -webkit-filter: grayscale(0); /* Old WebKit */
+}

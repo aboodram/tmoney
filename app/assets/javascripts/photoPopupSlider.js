@@ -28,13 +28,13 @@ window.addEventListener('DOMContentLoaded', function () {
 				imgTag.src = 'assets/' + imageSrcList[i].slice(18); //I dislike using slice in this way....refactor!
 				imgTag.alt = 'Popup Photos';
 				photoTag.appendChild(imgTag);
-				photoDiv.appendChild(photoTag); 
+				photoDiv.appendChild(photoTag);
 			}
 		},
 
 		calculateImageLocation = function () {
 			var image,
-					imageWidth = 256, //image.clientWidth; // currently set at 250
+					imageWidth = 256, //image.clientWidth; // currently set at 250 + padding
 					windowWidth = window.innerWidth,
 					top,
 					maxTop = 0,
@@ -107,7 +107,7 @@ window.addEventListener('DOMContentLoaded', function () {
 					maxTop = top;
 					container.style.height = maxTop + padding + "px;";
 				}
-				console.log('first', image.firstChild.src)
+				// console.log('first', image.firstChild.src);
 					// for (;currentLeft != left && currentTop != top;) {
 					// 	// Increment the current X position
 					// 	console.log(image.firstChild.src)
@@ -137,9 +137,41 @@ window.addEventListener('DOMContentLoaded', function () {
 						//	image.style.webkitTransform = 'translate(' + currentLeft + 'px,' + currentTop  + 'px)';
 						 // }, 1000);
 					// };
-				//};					
+				//};
+				calculateContainerHeight('photo-popup-div');	
 			};
 
+		},
+
+		calculateContainerHeight = function (id) {
+			var container = document.getElementById(id),
+					children  = container.children,
+					i = 0,
+					child,
+					transBeg,
+					transEnd,
+					currentTop,
+					imgHeight,
+					maxHeight = 0,
+					padding = 60;
+
+
+			for (i; i < container.childElementCount; i++) {
+				child = children[i];
+
+			  transBeg   = child.style.cssText.lastIndexOf(', ') + 2;
+			  transEnd   = child.style.cssText.lastIndexOf('px'); //translate(XXXpx, XXXpx)'
+			  currentTop = child.style.cssText.slice(transBeg, transEnd) * 1;		
+			  imgHeight  = child.clientHeight;
+
+			  if ( maxHeight < currentTop + imgHeight) {
+			  	maxHeight = currentTop + imgHeight;
+			  };
+
+			}
+
+			containerHeight = maxHeight + padding;
+			container.parentElement.style.height = containerHeight + 'px';
 		},
 
 		onPhotoClick = function () {

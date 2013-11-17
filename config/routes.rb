@@ -1,5 +1,6 @@
 Tmoney::Application.routes.draw do
   get "home/index"
+  post "home/contact_mailer"
   get "js/company_vivint"
   get "js/company_moneydesktop"
   get "js/company_orangesoda"
