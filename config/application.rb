@@ -22,16 +22,16 @@ module Tmoney
   end
 end
 
-config.action_mailer.smtp_settings = {
-    :address              => 'smtp.gmail.com',
-    :port                 => 465,
-    :domain               => 'taylorallred.com',
-    :user_name            => 'tay.allred@gmail.com',
-    :password             => 'S!lv#rshad)w',
-    :authentication       => 'ssl',
-    :enable_starttls_auto => true
+# config.action_mailer.smtp_settings = {
+#     address:              'smtp.gmail.com',
+#     port:                 465,
+#     domain:               'taylorallred.com',
+#     user_name:            'tay.allred@gmail.com',
+#     password:             'S!lv#rshad)w',
+#     authentication:       'plain',
+#     enable_starttls_auto: true
     
-}
-confic.action_mailer.default_url_options = {
-    :host => 'taylorallred.com'
-}
+# }
+# config.action_mailer.default_url_options = {
+#     host: 'taylorallred.com'
+# }

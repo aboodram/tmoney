@@ -263,7 +263,7 @@
 		<div id="contact" class="title"><h1>.</h1></div>
 		<div class="body">
 				<h1>Contact</h1>
-			<%= form_tag( {action: 'contact_mailer'}, :remote => false) do %>
+			<%= form_tag( {action: 'contact_mailer'}, :remote => true, :name => "contact-form") do %>
 				<%= label_tag(:name, 'Name',  :size => '45') %>
 				<%= text_field_tag(:name) %>
 				
@@ -275,7 +275,7 @@
 				<%= label_tag(:message) %>
 				<%= text_field_tag(:message) %>
 				
-				<%= submit_tag('Submit') %>
+				<%= submit_tag('Submit', :id => 'contactSubmit') %>
 			<% end %>
 			<!-- <form id="contact-form" name="contact"  method="post"> -->
 				<!-- <label for="name">Name</label> -->

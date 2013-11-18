@@ -2,9 +2,11 @@ class ContactMailer < ActionMailer::Base
   default from: "tay.allred@gmail.com"
 
   def forward_email(params)
+  	@message = params[:message]
+  	@from 	 = params[:email]
 
   	mail(			 to: 'tay.allred@gmail.com',
-  			  subject: 'params.message'
+  			  subject: 'Message from #<% params[:name]%> #<% @from %>'
   			)
   end
 
@@ -13,7 +15,7 @@ class ContactMailer < ActionMailer::Base
   	@viewer_email = params[:email]
 
   	mail(	   	to: 'tay.allred@gmail.com', #@viewer_email,
-  			 subject: 'Thanks for contacting me. I\' respond to your email in 24 hrs.')
+  			 subject: 'I\'ve recieved your message!')
   end
 
 end

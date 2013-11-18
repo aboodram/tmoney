@@ -9,7 +9,7 @@ class HomeController < ApplicationController
 		ContactMailer.forward_email(params).deliver
   	ContactMailer.response_email(params).deliver
   	# render layout: 'email_sent'
-  	redirect_to(root_path, :notice => 'Message was successfully sent.')
+  	# redirect_to('#contact', :notice => 'Message was successfully sent.')
 	end
 
 end
