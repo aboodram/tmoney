@@ -4,8 +4,8 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    Sent on: <%= Time.now.month %> <%= Time.now.day %>
-    Sent from: <%= @from %>
+    Sent on: <%= Date.today.strftime("%B") %> <%= Time.now.day %><br/>
+    Sent from: <%= @from %><br/>
     <%= @message %>
   </body>
 </html>

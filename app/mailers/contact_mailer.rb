@@ -6,7 +6,8 @@ class ContactMailer < ActionMailer::Base
   	@from 	 = params[:email]
 
   	mail(			 to: 'tay.allred@gmail.com',
-  			  subject: 'Message from #<% params[:name]%> #<% @from %>'
+  			  subject: "Message from #{ params[:name] } #{ @from }",
+	   			template_name: 'forward_email'
   			)
   end
 
@@ -14,7 +15,7 @@ class ContactMailer < ActionMailer::Base
   	@viewer = params[:name]
   	@viewer_email = params[:email]
 
-  	mail(	   	to: 'tay.allred@gmail.com', #@viewer_email,
+  	mail(	   	to: 't.allred@hotmail.com', #@viewer_email,
   			 subject: 'I\'ve recieved your message!')
   end
 

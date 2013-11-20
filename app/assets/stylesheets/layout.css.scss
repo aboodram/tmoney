@@ -212,12 +212,13 @@ span {
 		background-color: $gray7;
 		color: white;
 		border:none;
+		font-size: 14px;
 		@include nograyscale;
 		@include transition(0.8s);
 		transition-property: background-color;				
 	}
 	input[type=submit]:hover {
-		font-size: 14px;
+
 		background-color: $gray5;
 		color: white;
 		@include nograyscale;

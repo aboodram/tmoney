@@ -5,7 +5,6 @@ class HomeController < ApplicationController
   end
 
   def contact_mailer
-
 		ContactMailer.forward_email(params).deliver
   	ContactMailer.response_email(params).deliver
   	# render layout: 'email_sent'

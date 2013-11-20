@@ -21,17 +21,3 @@ module Tmoney
     # config.i18n.default_locale = :de
   end
 end
-
-# config.action_mailer.smtp_settings = {
-#     address:              'smtp.gmail.com',
-#     port:                 465,
-#     domain:               'taylorallred.com',
-#     user_name:            'tay.allred@gmail.com',
-#     password:             'S!lv#rshad)w',
-#     authentication:       'plain',
-#     enable_starttls_auto: true
-    
-# }
-# config.action_mailer.default_url_options = {
-#     host: 'taylorallred.com'
-# }
