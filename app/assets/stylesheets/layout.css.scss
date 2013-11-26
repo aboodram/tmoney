@@ -71,7 +71,7 @@ span {
 }
 /******************** TOOLS-CONTAINERS *******************/
 .window-background {
-	background: url('/assets/bg-1.jpg') no-repeat center top fixed;
+	background: image-url('bg-1.jpg') no-repeat center top fixed;
 	width: 100%;
 	background-size: $homepageWidth;
 	@include coverAll;
@@ -160,7 +160,7 @@ span {
 .contact-container-footer {
 	margin: 100px auto 20px;
 	min-height: 800px;
-	background-image: url('tiger-footer-3.jpg');
+	background-image: image-url('tiger-footer-33.jpg');
 
 	background-position: center top;
 	background-size: 100% auto;
@@ -547,7 +547,7 @@ span {
 	}
 }
 .sub-window.college {
-	background: url('green-plant-1.jpg');
+	background: image-url('green-plant-1.jpg');
 	overflow: auto;
 	&.open {
 		img {
@@ -577,7 +577,7 @@ span {
 	}
 }
 .sub-window.location {
-	background: url('world-map.jpg');
+	background: image-url('world-map.jpg');
 	&.open {
 		.floating-banner {
 			margin-left: -2400px;
@@ -674,7 +674,9 @@ span {
 		color: rgba(255, 255, 255, 0);
 		font-size: 24px;
 		text-transform: uppercase;
-		text-shadow: 3px 3px 8px #090909, 0px 0px 0px #E6E6E4, 0px 0px 0px #2E2E2E;
+		text-shadow: 3px 3px 8px #090909, 
+								 0px 0px 0px #E6E6E4,
+								 0px 0px 0px #2E2E2E;
 		font-weight: bold;
 		margin: 0 40px;
 	}

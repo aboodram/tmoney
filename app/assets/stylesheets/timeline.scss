@@ -10,7 +10,7 @@ $timeline-ruler-content-width: 5491px;
 	//overflow: hidden;
 	margin-bottom: 50px;
 	background-color: rgba(0, 0, 0, 0.25);
-	background: url("/assets/attachments-bg.png") top left repeat;
+	background: image-url("attachments-bg.png") top left repeat;
 	box-sizing: border-box;
 }
 
@@ -54,7 +54,7 @@ $timeline-ruler-content-width: 5491px;
 	white-space: nowrap;
 	@include user-selecT(none);
 	&:before {
-		background-image: url('/assets/timeline-ticks.png');
+		background-image: image-url('timeline-ticks.png');
 		background-repeat: repeat-x;
 		background-position: top left;
 		content: '';

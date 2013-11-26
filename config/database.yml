@@ -31,4 +31,5 @@ production:
   database: pg_production_db
   pool: 5
   timeout: 5000
-  password:
+  host: 127.0.0.1
+  port: 5432
