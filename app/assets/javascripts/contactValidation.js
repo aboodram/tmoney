@@ -9,9 +9,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			i = 0,
 
 	contactValidator = function () {
-		console.log('contactValidator');
 		form.addEventListener('submit', onContactFormSubmit);
-
 	},
 
 	onContactFormSubmit = function () {

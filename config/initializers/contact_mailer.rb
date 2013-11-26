@@ -11,6 +11,7 @@ ActionMailer::Base.smtp_settings = {
 
 ActionMailer::Base.default_url_options[:host] = "localhost:3000"
 #Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
+# Must add DevelopmentMailInterceptor.rb file in the lib folder and create the 
 
 # config.action_mailer.default_url_options = {
 #     :host => 'smtp.gmail.com'
