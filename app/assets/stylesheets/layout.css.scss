@@ -160,7 +160,7 @@ span {
 .contact-container-footer {
 	margin: 100px auto 20px;
 	min-height: 800px;
-	background-image: image-url('tiger-footer-3.jpg');
+	background-image: image-url('contact-tiger.jpg');
 
 	background-position: center top;
 	background-size: 100% auto;
@@ -179,14 +179,33 @@ span {
 								inset 0 -1px 1px rgb(162, 162, 162);
 		border: 1px solid rgb(150, 150, 150);*/
 	}
-	.form-error {
+	.form-result {
+		display: none;
 		position: absolute;
-		background-color: #CA973F;
+		background-color: $gray6;
 		left: 0;
 		right: 0;
 		bottom: -39px;
 		padding: 10px;
 		font-size: 19px;
+		&.error {
+			display: block;
+			&:after {
+				content: 'Each field is required. Please, try again.';
+			}
+		}
+		&.success {
+			display: block;
+			&:after {			
+				content: 'Thank You! Your form has been submitted!';
+			}
+		}
+		&.email-error {
+			display: block;
+			&:after {			
+				content: 'That doesn\'t appear to be a valid email address.';
+			}
+		}		
 	}
 	label {
 		display: inline-block;

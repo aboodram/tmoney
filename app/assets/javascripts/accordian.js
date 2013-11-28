@@ -5,7 +5,6 @@
 */
 
 window.addEventListener('DOMContentLoaded', function(){
-	console.log('accordian.js');
 
 	accordianList = function(options) {
 	var accordianList,

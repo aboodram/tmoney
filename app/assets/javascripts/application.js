@@ -14,8 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 
-//= require underscore
-//= require backbone
-//= require d3.v3
-
 //= require_tree

@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-	console.log('mapHoverView.js');
 
 	var mapHoverView = function () {
 		var listenees,

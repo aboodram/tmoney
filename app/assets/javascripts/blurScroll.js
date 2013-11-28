@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-	console.log('blurScroll.js');
 
 	var blurScrollSetup = function () {
 		var scrollItems = document.getElementsByClassName('college'),

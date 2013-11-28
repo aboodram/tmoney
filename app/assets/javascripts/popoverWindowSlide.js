@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-	console.log('popoverWindowAccordian.js');
 
 	var popoverButton,
 			subWindows,
