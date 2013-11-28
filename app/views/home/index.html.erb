@@ -13,9 +13,8 @@
 			<!-- <div class="showcase-section"><h1>Section 1: DOM Manipulation</h1>This page is all simple Javascript.  No jQuery, or JS libraries are used. Just me and the DOM.</div> -->
 			<ul class="btn-container-horizontal align-top">
 				<li class="btn "><a href="#work-history">Work History</a></li>
-				<li class="btn "><a href="#accomplishments">Accomplishments</a></li>
+				<li class="btn "><a href="#project-gallery-container">Photo Gallery</a></li>
 				<li class="btn "><a href="#contact">Contact</a></li>
-				<li class="btn "><a href="#references">References</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -118,8 +117,8 @@
 						<div class="info-row major no-border popoverButton"><span>Major</span>Philosophy &amp; Linguistics</div>
 				</div>
 				<div class="bio-footer">
-					<div class="split-half button popoverButton work-history">Work History</div>
-					<div class="split-half button popoverButton project-gallery">Project Gallery</div>
+					<div class="split-half button popoverButton work-history"><a href="#work-history">Work History</a></div>
+					<div class="split-half button popoverButton project-gallery"><a href="#project-gallery-container">Photo Gallery</a></div>
 				</div>
 			</div>
 		</div>
@@ -127,41 +126,78 @@
 		<div class="data-point-container">
 			<div class="dynamic-point custom-alignment"></div>
 		</div>
+	</div>
+</div>
 
-	</div>
-	</div>
-	<div class="work-history-container station-container" id="work-history">
-		<div class="title">
-			<div class="pre-text">
-				<span>Industry</span>
-				<span>Education</span>
+<div class="work-history-container station-container" id="work-history">
+	<div class="title">
+		<div class="pre-text">
+			<span>Industry</span>
+			<span>Education</span>
+		</div>
+		<div class="curved-text">
+			<div id="gear-icon">
+				<%= image_tag 'work-icon-simple.png'%>
 			</div>
-			<div class="curved-text">
-				<div id="gear-icon">
-					<%= image_tag 'work-icon-simple.png'%>
-				</div>
-				<div>
-					<span class="l1">W</span>
-					<span class="l2">o</span>
-					<span class="l3">r</span>
-					<span class="l4">k</span>
-					<span class="l5">H</span>
-					<span class="l6">i</span>
-					<span class="l7">s</span>
-					<span class="l8">t</span>
-					<span class="l9">o</span>
-					<span class="l10">r</span>
-					<span class="l11">y</span>
-				</div>
-			</div>
-			<div class="post-text">
-				<span>Dedication</span>
-				<span>Passion</span>
+			<div>
+				<span class="l1">W</span>
+				<span class="l2">o</span>
+				<span class="l3">r</span>
+				<span class="l4">k</span>
+				<span class="l5">H</span>
+				<span class="l6">i</span>
+				<span class="l7">s</span>
+				<span class="l8">t</span>
+				<span class="l9">o</span>
+				<span class="l10">r</span>
+				<span class="l11">y</span>
 			</div>
 		</div>
-		<div class="timeline-slider-master-container">
-			<div class="timeline-ruler-container">
-				<div class="timeline-ruler" id="timeline-ruler">
+		<div class="post-text">
+			<span>Dedication</span>
+			<span>Passion</span>
+		</div>
+	</div>
+	<div class="timeline-slider-master-container">
+		<div class="timeline-ruler-container">
+			<div class="timeline-ruler" id="timeline-ruler">
+				<div>2050</div>
+				<div>2045</div>
+				<div>2040</div>
+				<div>2035</div>
+				<div>2030</div>
+				<div>2025</div>
+				<div>2020</div>
+				<div>2015</div>
+				<div>2014</div>
+				<div class="current">2013</div>
+				<div>2012</div>
+				<div>2011</div>
+				<div>2010</div>
+				<div>2009</div>
+				<div>2008</div>
+				<div>2007</div>
+				<div>2006</div>
+				<div>2005</div>
+				<div>2004</div>
+				<div>2003</div>
+				<div>2002</div>
+				<div>2001</div>
+				<div>2000</div>
+				<div>1990</div>
+				<div>1984</div>
+				<div>1980</div>
+				<div>1975</div>
+			</div>
+			<div class="timeline-ruler-content" id="timeline-ruler-content">
+				<div id="vivint" class="history-marker vivint current-company">Vivint</div>
+				<div id="moneydesktop" class="history-marker moneydesktop">MoneyDesktop</div>
+				<div id="orangesoda" class="history-marker orangesoda">Orange Soda</div>
+				<div id="bluemarketing" class="history-marker bluemarketing">Blue Marketing Firm</div>
+				<div id="universityofutah" class="history-marker universityofutah">University Of Utah</div>
+			</div>
+			<div class="timeline-focus-container">
+				<div class="timeline-focus" id="timeline-focus">
 					<div>2050</div>
 					<div>2045</div>
 					<div>2040</div>
@@ -190,95 +226,44 @@
 					<div>1980</div>
 					<div>1975</div>
 				</div>
-				<div class="timeline-ruler-content" id="timeline-ruler-content">
-					<div id="vivint" class="history-marker vivint current-company">Vivint</div>
-					<div id="moneydesktop" class="history-marker moneydesktop">MoneyDesktop</div>
-					<div id="orangesoda" class="history-marker orangesoda">Orange Soda</div>
-					<div id="bluemarketing" class="history-marker bluemarketing">Blue Marketing Firm</div>
-					<div id="universityofutah" class="history-marker universityofutah">University Of Utah</div>
-				</div>
-				<div class="timeline-focus-container">
-					<div class="timeline-focus" id="timeline-focus">
-						<div>2050</div>
-						<div>2045</div>
-						<div>2040</div>
-						<div>2035</div>
-						<div>2030</div>
-						<div>2025</div>
-						<div>2020</div>
-						<div>2015</div>
-						<div>2014</div>
-						<div class="current">2013</div>
-						<div>2012</div>
-						<div>2011</div>
-						<div>2010</div>
-						<div>2009</div>
-						<div>2008</div>
-						<div>2007</div>
-						<div>2006</div>
-						<div>2005</div>
-						<div>2004</div>
-						<div>2003</div>
-						<div>2002</div>
-						<div>2001</div>
-						<div>2000</div>
-						<div>1990</div>
-						<div>1984</div>
-						<div>1980</div>
-						<div>1975</div>
-					</div>
-				</div>
 			</div>
 		</div>
+	</div>
 
-		<div id="company-display-container" class="body">
-		</div>
+	<div id="company-display-container" class="body">
 	</div>
-	<div id="project-gallery-container" class="project-gallery-container station-container">
-		<div id="project-gallery" class="title"><h1></h1></div>
-		<div id="photo-popup-div" class="body"></div>
-		<div class="footer-container"></div>
-	</div>
-	<div class="contact-container-footer station-container grayscale">
-		<div id="contact" class="title"><h1>.</h1></div>
-		<div class="body">
-				<h1>Contact</h1>
-			<%= form_tag( {action: 'contact_mailer'}, :remote => true, :name => "contact-form") do %>
-				<%= label_tag(:name, 'Name',  :size => '45') %>
-				<%= text_field_tag(:name) %>
-				
-
-				<%= label_tag(:email) %>
-				<%#= email_field(:email, :address) %>
-				<%= text_field_tag(:email) %>
-				
-				<%= label_tag(:message) %>
-				<%= text_field_tag(:message) %>
-				
-				<%= submit_tag('Submit', :id => 'contactSubmit') %>
-			<% end %>
-			<!-- <form id="contact-form" name="contact"  method="post"> -->
-				<!-- <label for="name">Name</label> -->
-					<!-- <input type="text" name="name" size="45" id="name"></input></br> -->
-				<!-- <label for="email">Email</label>
-					<input type="text" name="email" size="45" id="email"></input></br> -->
-				<!-- <label for="message">Message</label>
-					<input type="textarea" name="message" id="message"></input></br> -->
-				<!-- <input type="hidden" for="hidden-testing"></input> -->
-				<!-- <input type="submit" value="submit" onclick="verify()"></input> -->
-			<!-- </form> -->
-			<div class="form-error hidden">
-				Each field is required. Please, try again.
-			</div>
-	</div>
-	<div class="footer">
-
-	</div>
-	</div>
-<!-- 	<div class="references-container station-container">
-		<div id="references" class="title"><h1>References</h1></div>
-		<div class="body"> </div>
-		<div class="footer-container"></div>
-	</div> -->
 </div>
-<div class="contact-container ">Contact<%= image_tag 'tiger-face.jpg' %></div>
+
+<div id="project-gallery-container" class="project-gallery-container station-container">
+	<div id="project-gallery" class="title">
+		<h1></h1>
+	</div>
+	<div id="photo-popup-div" class="body"></div>
+	<div class="footer-container"></div>
+</div>
+
+<div class="contact-container-footer station-container grayscale">
+	<div id="contact" class="title">
+		<h1>.</h1>
+	</div>
+	<div class="body">
+			<h1>Contact</h1>
+		<%= form_tag( {action: 'contact_mailer'}, :remote => true, :name => "contact-form") do %>
+			<%= label_tag(:name, 'Name',  :size => '45') %>
+			<%= text_field_tag(:name) %>
+			
+
+			<%= label_tag(:email) %>
+			<%#= email_field(:email, :address) %>
+			<%= text_field_tag(:email) %>
+			
+			<%= label_tag(:message) %>
+			<%= text_field_tag(:message) %>
+			
+			<%= submit_tag('Submit', :id => 'contactSubmit') %>
+		<% end %>
+		<div class="form-error hidden">
+			Each field is required. Please, try again.
+		</div>
+	</div>
+</div>
