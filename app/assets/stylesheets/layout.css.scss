@@ -390,6 +390,7 @@ span {
 }
 .drawer {
 	position: relative;
+	padding: 0;
 	border-top: 1px solid $gray2;
 	overflow: hidden;
 	@include transition(0.5s);
@@ -423,6 +424,7 @@ span {
 		line-height: 2.2em;
 		color: white;
 		padding-left: 75px;
+		margin: 0;
 		width: 100px;
 		&:hover + span {
 			@include transition(0.5s);
